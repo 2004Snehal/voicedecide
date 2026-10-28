@@ -1,6 +1,6 @@
 [project]
 name = "voicedecide"
-version = "0.1.0a1"
+version = "0.1.0a2"
 description = "Training-free audio decisions (call routing, language ID) with EmbeddingGemma 2"
 readme = "README.md"
 license = "Apache-2.0"

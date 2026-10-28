@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0a2
+
+- PyPI page links: source, issues, changelog, author website.
+- CONTRIBUTING.md, issue and pull request templates.
+
+## 0.1.0a1
+
+- First alpha on PyPI (same code as below).
+
 ## 0.1.0 (unreleased)
 
 - `Decider`: embeds a clip once and answers every question from that one embedding; per-stage latency.
