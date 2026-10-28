@@ -1,0 +1,36 @@
+name: Bug report
+description: Something in voicedecide does not work as documented
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected, and what happened instead. Paste the full error.
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: Minimal code to reproduce
+      render: python
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: voicedecide version
+      placeholder: "python -c 'import voicedecide; print(voicedecide.__version__)'"
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Python version, OS, device (CPU / GPU model)
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Model revision
+      placeholder: "python -c 'from voicedecide import Decider; d = Decider(); d.encoder.load(); print(d.encoder.revision)'"

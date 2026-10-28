@@ -1,0 +1,17 @@
+voicedecide
+Copyright 2026 Snehal Pal
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It uses, but does not redistribute, the following model. The weights are downloaded from
+Hugging Face at runtime and are subject to their own license:
+  - EmbeddingGemma 2 (google/embeddinggemma-2), Google DeepMind, Apache License 2.0
+    https://huggingface.co/google/embeddinggemma-2
+
+Built-in packs contain prototype vectors (averaged embeddings, no audio) derived from:
+  - FLEURS (google/fleurs), Google, CC BY 4.0
+    https://huggingface.co/datasets/google/fleurs
+
+Examples and benchmarks download, but do not redistribute:
+  - MINDS-14 (PolyAI/minds14), PolyAI, CC BY 4.0
+    https://huggingface.co/datasets/PolyAI/minds14

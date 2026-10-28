@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Share a pack
+    url: https://huggingface.co/docs/hub/repositories-getting-started
+    about: Packs are shared on the Hugging Face Hub, not in this repository. See CONTRIBUTING.md.

@@ -1,0 +1,23 @@
+name: stale
+
+on:
+  schedule:
+    - cron: "30 3 * * 1"   # Mondays
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          days-before-stale: 60
+          days-before-close: 14
+          stale-issue-message: "No activity for 60 days. This will be closed in 14 days unless someone comments."
+          stale-pr-message: "No activity for 60 days. This will be closed in 14 days unless someone comments."
+          exempt-issue-labels: "pinned,accepted"
+          exempt-pr-labels: "pinned,accepted"

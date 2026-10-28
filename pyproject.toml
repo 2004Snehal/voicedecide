@@ -1,0 +1,54 @@
+[project]
+name = "voicedecide"
+version = "0.1.0a1"
+description = "Training-free audio decisions (call routing, language ID) with EmbeddingGemma 2"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Snehal Pal" }]
+requires-python = ">=3.11"
+keywords = ["audio", "speech", "classification", "language-identification", "intent", "embeddings", "zero-shot"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "soundfile>=0.12",
+    "torch>=2.6",
+    "torchvision>=0.21",
+    "transformers>=5.21.0",
+    "sentence-transformers>=6.1.0",
+    "huggingface_hub>=1.31.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/2004Snehal/voicedecide"
+Source = "https://github.com/2004Snehal/voicedecide"
+Issues = "https://github.com/2004Snehal/voicedecide/issues"
+Changelog = "https://github.com/2004Snehal/voicedecide/blob/main/CHANGELOG.md"
+Author = "https://snehalpal.vercel.app/"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build", "twine", "pyarrow", "pandas"]
+
+[project.scripts]
+voicedecide = "voicedecide.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["voicedecide"]
+
+[tool.hatch.build.targets.sdist]
+include = ["voicedecide", "tests", "README.md", "LICENSE", "NOTICE", "CHANGELOG.md", "CONTRIBUTING.md"]
+
+[tool.pytest.ini_options]
+markers = ["slow: loads the real EmbeddingGemma 2 model (run with -m slow)"]
+addopts = "-m 'not slow'"
