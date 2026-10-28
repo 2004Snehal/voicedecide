@@ -13,6 +13,15 @@ audio → EmbeddingGemma 2 (frozen) → cosine vs. option vectors → ÷ τ → 
 - **Zero-shot (default):** describe the options in words.
 - **Few-shot prototypes (recommended):** give ~10 labeled clips per option, build once, reuse.
 
+## Background
+
+voicedecide grew out of an experiment that tested EmbeddingGemma 2 as a training-free voice decision
+layer on call routing, language identification and emotion recognition. The notebook with the
+original setup and evaluation is on Kaggle:
+[EmbeddingGemma 2 as a training-free voice decision layer](https://www.kaggle.com/code/palsnehal004/embeddinggemma-2-as-a-training-free-voice-jev?scriptVersionId=363227677).
+Routing and language ID worked well there, so the library supports those two tasks. Emotion from tone
+alone did not, so it is not included.
+
 ## Install
 
 ```bash
@@ -180,6 +189,21 @@ voicedecide languages
 voicedecide is maintained in spare time, so reviews may take a few weeks. Please open an issue before
 a pull request; bug fixes with tests are the most likely to be merged. Packs are shared on the
 Hugging Face Hub, not in this repository. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Datasets and credits
+
+The library ships no audio. These datasets were used in the original experiment, the benchmarks and the
+built-in pack:
+
+| Dataset | Used for | License | Credit |
+|---|---|---|---|
+| [MINDS-14](https://huggingface.co/datasets/PolyAI/minds14) (PolyAI) | call-routing experiment, `examples/banking-routing` | CC BY 4.0 | Gerz et al., *Multilingual and Cross-Lingual Intent Detection from Spoken Data*, 2021, [arXiv:2104.08524](https://arxiv.org/abs/2104.08524) |
+| [FLEURS](https://huggingface.co/datasets/google/fleurs) (Google) | language-ID experiment, built-in `language-id` pack vectors | CC BY 4.0 | Conneau et al., *FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech*, 2022, [arXiv:2205.12446](https://arxiv.org/abs/2205.12446) |
+| [RAVDESS](https://zenodo.org/records/1188976) ([HF mirror](https://huggingface.co/datasets/xbgoose/ravdess)) | emotion experiment in the Kaggle notebook only; nothing in this library is derived from it | CC BY-NC-SA 4.0 | Livingstone & Russo, *The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS)*, PLoS ONE 13(5): e0196391, 2018, [doi:10.1371/journal.pone.0196391](https://doi.org/10.1371/journal.pone.0196391) |
+
+Model: [EmbeddingGemma 2](https://huggingface.co/google/embeddinggemma-2) by Google DeepMind
+(Apache 2.0), *EmbeddingGemma 2: Unified and Efficient Multimodal Representations*, 2026,
+[arXiv:2610.37364](https://arxiv.org/abs/2610.37364).
 
 ## License
 
