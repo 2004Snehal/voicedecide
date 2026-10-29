@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0
+
+- First stable release.
+- Fix: the built-in `language-id` pack (`pack.json`, `prototype_sums.npy`) now ships in the wheel and sdist;
+  `Choice.from_pack("language-id")` no longer raises `PackError` after `pip install voicedecide`.
+- CI builds the wheel and checks the built-in pack is inside it.
+
 ## 0.1.0a2
 
 - PyPI page links: source, issues, changelog, author website.

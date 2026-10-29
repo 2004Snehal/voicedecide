@@ -28,7 +28,7 @@ from .packs import list_languages
 from .questions import Choice
 from .results import Answer, DecisionResult
 
-__version__ = "0.1.0a2"
+__version__ = "0.1.0"
 
 __all__ = [
     "Answer", "Choice", "DecisionResult", "Decider", "Encoder", "FitReport", "LeakageWarning", "MODEL_ID",

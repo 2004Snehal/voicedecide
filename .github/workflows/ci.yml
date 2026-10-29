@@ -20,3 +20,6 @@ jobs:
       - run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
       - run: pip install -e ".[dev]"
       - run: pytest -q
+      # the built-in pack must be inside the wheel, not just the source tree
+      - run: python -m build --wheel
+      - run: python -c "import glob, sys, zipfile; n = zipfile.ZipFile(glob.glob('dist/*.whl')[0]).namelist(); sys.exit(any(x not in n for x in ['voicedecide/packs/language-id/pack.json', 'voicedecide/packs/language-id/prototype_sums.npy']))"

@@ -10,6 +10,7 @@ from voicedecide import (Choice, Decider, ModelRevisionWarning, PackError, Unkno
                          UntestedLanguageWarning, cli, list_languages)
 from voicedecide.audio import SR
 from voicedecide.languages import TESTED, resolve, untested_message
+from voicedecide.packs import pack_meta
 
 from .conftest import FREQS, tone
 
@@ -129,13 +130,11 @@ def test_missing_pack_errors(tmp_path):
         Choice.from_pack(str(tmp_path / "nope"))
 
 
-def test_builtin_pack_absent_gives_clear_error():
-    from voicedecide.packs import _locate
-
-    try:
-        _locate("language-id")
-    except PackError as e:
-        assert "build_language_pack" in str(e)
+def test_builtin_language_pack_ships():
+    meta = pack_meta("language-id")
+    assert meta["task"] == "language-id" and set(meta["labels"]) == TESTED
+    q = Choice.from_pack("language-id")
+    assert set(q.labels) == TESTED and q.sums.shape == (len(TESTED), 768)
 
 
 # ── CLI ──

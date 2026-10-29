@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "name": "language-id",
+  "task": "language-id",
+  "mode": "proto",
+  "labels": [
+    "en_us",
+    "hi_in",
+    "bn_in",
+    "ta_in",
+    "te_in",
+    "mr_in"
+  ],
+  "descriptions": {},
+  "tau": 0.005,
+  "thresholds": {
+    "act": 0.6338133666622098,
+    "confirm": 0.5
+  },
+  "min_similarity": null,
+  "centering": false,
+  "text_prefix": "task: classification | query: ",
+  "model_id": "google/embeddinggemma-2",
+  "model_revision": "f9972ac22e696a105c482202646979e33e4b5a1e",
+  "dim": 768,
+  "label_status": {
+    "en_us": "tested",
+    "hi_in": "tested",
+    "bn_in": "tested",
+    "ta_in": "tested",
+    "te_in": "tested",
+    "mr_in": "tested"
+  },
+  "fingerprints": [],
+  "counts": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+  ],
+  "metrics": {
+    "split": "FLEURS test",
+    "n": 60,
+    "per_language": {
+      "en_us": 1.0,
+      "hi_in": 0.9,
+      "bn_in": 1.0,
+      "ta_in": 0.9,
+      "te_in": 1.0,
+      "mr_in": 1.0
+    },
+    "accuracy_tested": 0.9666666666666667
+  },
+  "sources": [
+    {
+      "dataset": "google/fleurs",
+      "license": "CC-BY-4.0",
+      "splits": {
+        "prototypes": "validation",
+        "calibration": "validation",
+        "benchmark": "test"
+      }
+    }
+  ]
+}

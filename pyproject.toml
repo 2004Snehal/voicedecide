@@ -1,6 +1,6 @@
 [project]
 name = "voicedecide"
-version = "0.1.0a2"
+version = "0.1.0"
 description = "Training-free audio decisions (call routing, language ID) with EmbeddingGemma 2"
 readme = "README.md"
 license = "Apache-2.0"
@@ -9,7 +9,7 @@ authors = [{ name = "Snehal Pal" }]
 requires-python = ">=3.11"
 keywords = ["audio", "speech", "classification", "language-identification", "intent", "embeddings", "zero-shot"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
     "Topic :: Multimedia :: Sound/Audio :: Speech",
