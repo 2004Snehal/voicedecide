@@ -9,3 +9,6 @@ build/
 work/
 .DS_Store
 aliases/
+.env
+.env.*
+!.env.example
